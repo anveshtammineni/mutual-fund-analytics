@@ -1,0 +1,8 @@
+# Mutual Fund Analytics Requirements
+# Add your dependencies here
+pandas
+numpy
+matplotlib
+seaborn
+yfinance
+jupyter
