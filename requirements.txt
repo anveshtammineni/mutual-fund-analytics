@@ -1,4 +1,32 @@
-# Mutual Fund Analytics Requirements
+# ==============================================================================
+# MUTUAL FUND ANALYTICS - REQUIREMENTS & DATA QUALITY SUMMARY
+# ==============================================================================
+#
+# DATA QUALITY SUMMARY:
+# 1. Dataset Overview:
+#    - 01_fund_master.csv: 40 rows, 15 columns (No Nulls, All AMFI codes unique)
+#    - 02_nav_history.csv: 46000 rows, 3 columns (No Nulls)
+#    - 03_aum_by_fund_house.csv: 90 rows, 5 columns (No Nulls)
+#    - 04_monthly_sip_inflows.csv: 48 rows, 6 columns (12 Nulls in yoy_growth_pct)
+#    - 05_category_inflows.csv: 144 rows, 3 columns (No Nulls)
+#    - 06_industry_folio_count.csv: 21 rows, 6 columns (No Nulls)
+#    - 07_scheme_performance.csv: 40 rows, 19 columns (No Nulls)
+#    - 08_investor_transactions.csv: 32778 rows, 13 columns (No Nulls)
+#    - 09_portfolio_holdings.csv: 322 rows, 8 columns (No Nulls)
+#    - 10_benchmark_indices.csv: 8050 rows, 3 columns (No Nulls)
+#
+# 2. Identified Anomalies:
+#    - yoy_growth_pct in '04_monthly_sip_inflows.csv' has 12 missing values.
+#      This occurs in the first 12 months, as there is no historical baseline
+#      to compute Year-over-Year growth.
+#
+# 3. AMFI Code Validation:
+#    - Verified relationship between fund_master and nav_history.
+#    - All 40 unique AMFI codes in fund_master exist in nav_history (100% Match).
+#
+# ==============================================================================
+
+# DEPENDENCIES:
 pandas
 numpy
 matplotlib
